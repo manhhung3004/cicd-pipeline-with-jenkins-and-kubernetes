@@ -1,6 +1,6 @@
-<h1>Introducing an Electronics Accessories Shop</h1>
+<h1>Introducing an iShop</h1>
 
-<p>Welcome to our electronics accessories shop! We offer a wide range of electronic accessories to enhance your devices and make your tech experience even better. Whether you're looking for chargers, cables, cases, or any other electronic accessory, we've got you covered.</p>
+<p>Welcome to our iShop! We offer a wide range of electronic accessories to enhance your devices and make your tech experience even better. Whether you're looking for chargers, cables, cases, or any other electronic accessory, we've got you covered.</p>
 
 <p>To get started, follow these steps to set up and run our shop:</p>
 
