@@ -1,17 +1,21 @@
 import { useState } from 'react'
 
 function Home() {
-    const [count, setCount] = useState(0)
 
     return (
     <div>
-        <Header/>
+        <header>
+            <link rel="stylesheet" href="css/bootstrap.min.css"/>
+            <link rel="stylesheet" href="css/style.css"/>
+            <link rel="stylesheet" href="css/responsive.css"/>
+            <link rel="icon" href="images/fevicon.png" type="image/gif" />
+            <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"/>
+        </header>
         <div class="main-layout">
             <div class="loader_bg">
                 <div class="loader"><img src="images/loading.gif" alt="#" /></div>
             </div>
             <header>
-
                 <div class="header">
                     <div class="head_top">
                         <div class="container">
@@ -48,13 +52,12 @@ function Home() {
                                     <div class="limit-box">
                                         <nav class="main-menu">
                                             <ul class="menu-area-main">
-                                                <li class="active"> <a href="index.html">Home</a> </li>
-                                                <li> <a href="about.html">About</a> </li>
-                                                <li> <a href="product.html">product</a> </li>
-                                                <li> <a href="blog.html"> Blog</a> </li>
-                                                <li> <a href="contact.html">Contact</a> </li>
+                                                <li class="active"> <a href="index">Home</a> </li>
+                                                <li> <a href="about">About</a> </li>
+                                                <li> <a href="product">product</a> </li>
+                                                <li> <a href="blog"> Blog</a> </li>
+                                                <li> <a href="contact">Contact</a> </li>
                                                 <li class="mean-last"> <a href="#contact">signup</a> </li>
-
                                             </ul>
                                         </nav>
                                     </div>
@@ -66,12 +69,9 @@ function Home() {
                         </div>
                     </div>
                 </div>
-
             </header>
-
             <section class="slider_section">
                 <div id="main_slider" class="carousel slide banner-main" data-ride="carousel">
-
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             {/* <img class="first-slide" src="images/banner2.jpg" alt="First slide"> */}
@@ -109,7 +109,6 @@ function Home() {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
                         <i class='fa fa-angle-right'></i>
@@ -117,15 +116,10 @@ function Home() {
                     <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
                         <i class='fa fa-angle-left'></i>
                     </a>
-
                 </div>
-
             </section>
-
-
             <div class="whyschose">
                 <div class="container">
-
                     <div class="row">
                         <div class="col-md-7 offset-md-3">
                             <div class="title">
@@ -175,7 +169,6 @@ function Home() {
                     </div>
                 </div>
             </div>
-
             <div class="service">
                 <div class="container">
                     <div class="row">
@@ -232,7 +225,6 @@ function Home() {
                     </div>
                 </div>
             </div>
-
             <div class="product">
                 <div class="container">
                     <div class="row">
@@ -305,10 +297,6 @@ function Home() {
                                     <span>$25.00</span>
                                 </div>
                             </div>
-
-
-
-
                         </div>
                     </div>
                 </div>
@@ -333,12 +321,9 @@ function Home() {
                                         <div class="carousel-caption text-bg">
                                             <div class="img_bg">
                                                 <i><img src="images/lllll.png" /><span>Jone Due<strong class="date">12/02/2019</strong></span></i>
-
                                             </div>
-
                                             <p>You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am really satisfied with my first laptop service.
                                                 You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am </p>
-
                                         </div>
                                     </div>
                                 </div>
@@ -347,11 +332,9 @@ function Home() {
                                         <div class="carousel-caption text-bg">
                                             <div class="img_bg">
                                                 <i><img src="images/lllll.png" /><span>Jone Due<strong class="date">12/02/2019</strong></span></i>
-
                                             </div>
                                             <p>You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am really satisfied with my first laptop service.
                                                 You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am </p>
-
                                         </div>
                                     </div>
                                 </div>
@@ -360,28 +343,22 @@ function Home() {
                                         <div class="carousel-caption text-bg">
                                             <div class="img_bg">
                                                 <i><img src="images/lllll.png" /><span>Jone Due<strong class="date">12/02/2019</strong></span></i>
-
                                             </div>
                                             <p>You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am really satisfied with my first laptop service.
                                                 You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am </p>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
-
                 <div class="container">
                     <div class="yellow_bg">
                         <div class="row">
                             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
                                 <div class="yellow-box">
                                     <h3>REQUEST A FREE QUOTE<i><img src="icon/calll.png" /></i></h3>
-
                                     <p>Get answers and advice from people you want it from.</p>
                                 </div>
                             </div>
@@ -394,18 +371,11 @@ function Home() {
                     </div>
                 </div>
             </div>
-
-
             <div class="container-fluid padi">
                 <div class="map">
                     <img src="images/mapimg.jpg" alt="img" />
                 </div>
             </div>
-
-
-
-
-
             <footr>
                 <div class="footer">
                     <div class="container">
@@ -463,20 +433,16 @@ function Home() {
                     <div class="copyright">
                         <p>Copyright 2019 All Right Reserved By <a href="https://html.design/">Free html Templates</a> Distributed By <a href="https://themewagon.com">ThemeWagon </a></p>
                     </div>
-
                 </div>
             </footr>
-
             <script src="js/jquery.min.js"></script>
             <script src="js/popper.min.js"></script>
             <script src="js/bootstrap.bundle.min.js"></script>
             <script src="js/jquery-3.0.0.min.js"></script>
             <script src="js/plugin.js"></script>
-
             <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
             <script src="js/custom.js"></script>
             <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-
             <div />
         </div>
         </div>
