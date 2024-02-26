@@ -1,20 +1,17 @@
-# iShop
-Introducing in iShop
+<h1>Introducing an Electronics Accessories Shop</h1>
 
-Welcome to our iShop! We offer a wide range of electronic accessories to enhance your devices and make your tech experience even better. Whether you're looking for chargers, cables, cases, or any other electronic accessory, we've got you covered.
+<p>Welcome to our electronics accessories shop! We offer a wide range of electronic accessories to enhance your devices and make your tech experience even better. Whether you're looking for chargers, cables, cases, or any other electronic accessory, we've got you covered.</p>
 
-To get started, follow these steps to set up and run our shop:
+<p>To get started, follow these steps to set up and run our shop:</p>
 
-Install Dependencies:
-Run the following command to install the necessary dependencies:
+<ol>
+  <li>Install Dependencies:</li>
+  <code>npm install</code>
+  
+  <li>Run Development Server:</li>
+  <code>npm run dev</code>
+</ol>
 
-Copy
-npm install
-Run Development Server:
-Once the dependencies are installed, execute the following command to run the development server:
+<p>By following these steps, you'll have our electronics accessories shop up and running. Feel free to explore our wide selection of high-quality products and find the perfect accessories for your electronic devices.</p>
 
-Copy
-npm run dev
-By following these steps, you'll have our electronics accessories shop up and running. Feel free to explore our wide selection of high-quality products and find the perfect accessories for your electronic devices.
-
-If you have any questions or need assistance, our friendly customer support team is always ready to help. Happy shopping!
+<p>If you have any questions or need assistance, our friendly customer support team is always ready to help. Happy shopping!</p>
