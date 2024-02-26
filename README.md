@@ -5,6 +5,9 @@
 <p>To get started, follow these steps to set up and run our shop:</p>
 
 <ol>
+  <li>Move /FE:</li>
+  <code>cd FE</code>
+  
   <li>Install Dependencies:</li>
   <code>npm install</code>
   
