@@ -1,4 +1,36 @@
 import { useState } from 'react'
+import '../../css/style.css'
+import '../../css/bootstrap.min.css'
+import '../../css/responsive.css'
+
+
+import loading from "../../images/loading.gif"
+import banner2 from "../../images/banner2.jpg"
+import logo from "../../images/logo.jpg"
+
+import icon1 from "../../icon/1.png"
+import icon2 from "../../icon/2.png"
+import icon3 from "../../icon/3.png"
+import icon4 from "../../icon/4.png"
+
+import service1 from "../../icon/service1.png"
+import service2 from "../../icon/service2.png"
+import service3 from "../../icon/service3.png"
+import service4 from "../../icon/service4.png"
+import service5 from "../../icon/service5.png"
+import service6 from "../../icon/service6.png"
+
+import p1 from "../../icon/p1.png"
+import p2 from "../../icon/p2.png"
+import p3 from "../../icon/p3.png"
+import p4 from "../../icon/p4.png"
+import p5 from "../../icon/p5.png"
+import p6 from "../../icon/p6.png"
+import p7 from "../../icon/p7.png"
+
+import mapimg from "../../images/mapimg.jpg"
+
+import Call from "../../icon/calll.png"
 
 function Home() {
 
@@ -12,9 +44,9 @@ function Home() {
             <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"/>
         </header>
         <div class="main-layout">
-            <div class="loader_bg">
-                <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-            </div>
+            {/* <div class="loader_bg">
+                <div class="loader"> <img src={loading} alt="loading-in-images"/></div>
+            </div> */}
             <header>
                 <div class="header">
                     <div class="head_top">
@@ -43,7 +75,7 @@ function Home() {
                             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                                 <div class="full">
                                     <div class="center-desk">
-                                        <div class="logo"> <a href="index.html"><img src="images/logo.jpg" alt="logo" /></a> </div>
+                                        <div class="logo"> <a href=""><img src={logo} alt="logo"/></a> </div>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +84,7 @@ function Home() {
                                     <div class="limit-box">
                                         <nav class="main-menu">
                                             <ul class="menu-area-main">
-                                                <li class="active"> <a href="index">Home</a> </li>
+                                                <li class="active"> <a href="">Home</a> </li>
                                                 <li> <a href="about">About</a> </li>
                                                 <li> <a href="product">product</a> </li>
                                                 <li> <a href="blog"> Blog</a> </li>
@@ -75,6 +107,7 @@ function Home() {
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             {/* <img class="first-slide" src="images/banner2.jpg" alt="First slide"> */}
+                            <img src={banner2} alt="banner-2"/>
                             <div class="container">
                                 <div class="carousel-caption relative">
                                     <h1>Our <strong class="black_bold">Latest </strong>
@@ -87,6 +120,7 @@ function Home() {
                         </div>
                         <div class="carousel-item">
                             {/* <img class="second-slide" src="images/banner2.jpg" alt="Second slide"> */}
+                            <img src={banner2} alt="banner-2"/>
                             <div class="container">
                                 <div class="carousel-caption relative">
                                     <h1>Our <strong class="black_bold">Latest </strong>
@@ -99,6 +133,7 @@ function Home() {
                         </div>
                         <div class="carousel-item">
                             {/* <img class="third-slide" src="images/banner2.jpg" alt="Third slide"> */}
+                            <img src={banner2} alt="banner-2"/>
                             <div class="container">
                                 <div class="carousel-caption relative">
                                     <h1>Our  <strong class="black_bold">Latest </strong>
@@ -136,28 +171,32 @@ function Home() {
                         <div class="row">
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                 <div class="for_box">
-                                    <i><img src="icon/1.png" /></i>
+                                    <i><img src={icon1} alt="icon 1"/></i>
+                                    {/* <i><img src="icon/1.png" /></i> */}
                                     <h3>Data recovery</h3>
                                     <p>Perspiciatis eos quos totam cum minima autPerspiciatis eos quos</p>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                 <div class="for_box">
-                                    <i><img src="icon/2.png" /></i>
+                                    {/* <i><img src="icon/2.png" /></i> */}
+                                    <i><img src={icon2} alt="icon 2"/></i>
                                     <h3>Computer repair</h3>
                                     <p>Perspiciatis eos quos totam cum minima autPerspiciatis eos quos</p>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                 <div class="for_box">
-                                    <i><img src="icon/3.png" /></i>
+                                <i><img src={icon3} alt="icon 3"/></i>
+                                    {/* <i><img src="icon/3.png" /></i> */}
                                     <h3>Mobile service</h3>
                                     <p>Perspiciatis eos quos totam cum minima autPerspiciatis eos quos</p>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                 <div class="for_box">
-                                    <i><img src="icon/4.png" /></i>
+                                <i><img src={icon4} alt="icon 4"/></i>
+                                    {/* <i><img src="icon/4.png" /></i> */}
                                     <h3>Network solutions</h3>
                                     <p>Perspiciatis eos quos totam cum minima autPerspiciatis eos quos</p>
                                 </div>
@@ -182,42 +221,48 @@ function Home() {
                     <div class="row">
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                             <div class="service-box">
-                                <i><img src="icon/service1.png" /></i>
+                                {/* <i><img src="icon/service1.png" /></i> */}
+                                <i><img src={service1} alt="service 1"/></i>
                                 <h3>Fast service</h3>
                                 <p>Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                             <div class="service-box">
-                                <i><img src="icon/service2.png" /></i>
+                                {/* <i><img src="icon/service2.png" /></i> */}
+                                <i><img src={service2} alt="service 2"/></i>
                                 <h3>Secure payments</h3>
                                 <p>Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                             <div class="service-box">
-                                <i><img src="icon/service3.png" /></i>
+                            <i><img src={service3} alt="service 3"/></i>
+                                {/* <i><img src="icon/service3.png" /></i> */}
                                 <h3>Expert team</h3>
                                 <p>Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                             <div class="service-box">
-                                <i><img src="icon/service4.png" /></i>
+                                {/* <i><img src="icon/service4.png" /></i> */}
+                                <i><img src={service4} alt="service 4"/></i>
                                 <h3>Affordable services</h3>
                                 <p>Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                             <div class="service-box">
-                                <i><img src="icon/service5.png" /></i>
+                                {/* <i><img src="icon/service5.png" /></i> */}
+                                <i><img src={service5} alt="service 5"/></i>
                                 <h3>90 Days warranty</h3>
                                 <p>Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                             <div class="service-box">
-                                <i><img src="icon/service6.png" /></i>
+                            <i><img src={service6} alt="service 6"/></i>
+                                {/* <i><img src="icon/service6.png" /></i> */}
                                 <h3>Award winning</h3>
                                 <p>Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
                             </div>
@@ -243,56 +288,64 @@ function Home() {
                         <div class="row">
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                 <div class="product-box">
-                                    <i><img src="icon/p1.png" /></i>
+                                    {/* <i><img src="icon/p1.png" /></i> */}
+                                    <i><img src={p1} alt="p1"/></i>
                                     <h3>Norton Internet Security</h3>
                                     <span>$25.00</span>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                 <div class="product-box">
-                                    <i><img src="icon/p2.png" /></i>
+                                    {/* <i><img src="icon/p2.png" /></i> */}
+                                    <i><img src={p2} alt="p2"/></i>
                                     <h3>Norton Internet Security</h3>
                                     <span>$25.00</span>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                 <div class="product-box">
-                                    <i><img src="icon/p3.png" /></i>
+                                    {/* <i><img src="icon/p3.png" /></i> */}
+                                    <i><img src={p3} alt="p3"/></i>
                                     <h3>Norton Internet Security</h3>
                                     <span>$25.00</span>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                 <div class="product-box">
-                                    <i><img src="icon/p4.png" /></i>
+                                    {/* <i><img src="icon/p4.png" /></i> */}
+                                    <i><img src={p4} alt="p4"/></i>
                                     <h3>Norton Internet Security</h3>
                                     <span>$25.00</span>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                 <div class="product-box">
-                                    <i><img src="icon/p5.png" /></i>
+                                    {/* <i><img src="icon/p5.png" /></i> */}
+                                    <i><img src={p5} alt="p5"/></i>
                                     <h3>Norton Internet Security</h3>
                                     <span>$25.00</span>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                 <div class="product-box">
-                                    <i><img src="icon/p2.png" /></i>
+                                    {/* <i><img src="icon/p2.png" /></i> */}
+                                    <i><img src={p2} alt="p2"/></i>
                                     <h3>Norton Internet Security</h3>
                                     <span>$25.00</span>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                 <div class="product-box">
-                                    <i><img src="icon/p6.png" /></i>
+                                    {/* <i><img src="icon/p6.png" /></i> */}
+                                    <i><img src={p6} alt="p6"/></i>
                                     <h3>Norton Internet Security</h3>
                                     <span>$25.00</span>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                 <div class="product-box">
-                                    <i><img src="icon/p7.png" /></i>
+                                    {/* <i><img src="icon/p7.png" /></i> */}
+                                    <i><img src={p7} alt="p7"/></i>
                                     <h3>Norton Internet Security</h3>
                                     <span>$25.00</span>
                                 </div>
@@ -300,7 +353,8 @@ function Home() {
                         </div>
                     </div>
                 </div>
-                <div class="Clients_bg_white">
+                {/* this import data in database */}
+                {/* <div class="Clients_bg_white">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -320,7 +374,7 @@ function Home() {
                                     <div class="container">
                                         <div class="carousel-caption text-bg">
                                             <div class="img_bg">
-                                                <i><img src="images/lllll.png" /><span>Jone Due<strong class="date">12/02/2019</strong></span></i>
+                                                <i><i><img src={p7} alt="p7"/></i><span>Jone Due<strong class="date">12/02/2019</strong></span></i>
                                             </div>
                                             <p>You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am really satisfied with my first laptop service.
                                                 You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am </p>
@@ -331,7 +385,7 @@ function Home() {
                                     <div class="container">
                                         <div class="carousel-caption text-bg">
                                             <div class="img_bg">
-                                                <i><img src="images/lllll.png" /><span>Jone Due<strong class="date">12/02/2019</strong></span></i>
+                                                <i><i><img src={p7} alt="p7"/></i><span>Jone Due<strong class="date">12/02/2019</strong></span></i>
                                             </div>
                                             <p>You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am really satisfied with my first laptop service.
                                                 You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am </p>
@@ -342,7 +396,7 @@ function Home() {
                                     <div class="container">
                                         <div class="carousel-caption text-bg">
                                             <div class="img_bg">
-                                                <i><img src="images/lllll.png" /><span>Jone Due<strong class="date">12/02/2019</strong></span></i>
+                                                <i><i><img src={p7} alt="p7"/></i><span>Jone Due<strong class="date">12/02/2019</strong></span></i>
                                             </div>
                                             <p>You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am really satisfied with my first laptop service.
                                                 You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. I am </p>
@@ -352,13 +406,13 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div class="container">
                     <div class="yellow_bg">
                         <div class="row">
                             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
                                 <div class="yellow-box">
-                                    <h3>REQUEST A FREE QUOTE<i><img src="icon/calll.png" /></i></h3>
+                                    <h3>REQUEST A FREE QUOTE<i><img src={Call} alt="call"/></i></h3>
                                     <p>Get answers and advice from people you want it from.</p>
                                 </div>
                             </div>
@@ -373,7 +427,7 @@ function Home() {
             </div>
             <div class="container-fluid padi">
                 <div class="map">
-                    <img src="images/mapimg.jpg" alt="img" />
+                    <img src={mapimg} alt="mapimg"/>
                 </div>
             </div>
             <footr>
@@ -429,9 +483,6 @@ function Home() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="copyright">
-                        <p>Copyright 2019 All Right Reserved By <a href="https://html.design/">Free html Templates</a> Distributed By <a href="https://themewagon.com">ThemeWagon </a></p>
                     </div>
                 </div>
             </footr>

@@ -1,12 +1,22 @@
 import { useState } from 'react'
 
+import '../../css/style.css'
+import '../../css/bootstrap.min.css'
+import '../../css/responsive.css'
+
+import logo from "../../images/logo.jpg"
+
+import images1 from "../../images/1.jpg"
+import images2 from "../../images/2.jpg"
+import images3 from "../../images/3.jpg"
+
 function Blog() {
     return (
         <div>
             <div class="main-layout">
-                <div class="loader_bg">
+                {/* <div class="loader_bg">
                     <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-                </div>
+                </div> */}
                 <header>
                     <div class="header">
                         <div class="head_top">
@@ -35,7 +45,7 @@ function Blog() {
                                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                                     <div class="full">
                                         <div class="center-desk">
-                                            <div class="logo"> <a href="index.html"><img src="images/logo.jpg" alt="logo" /></a> </div>
+                                            <div class="logo"> <a href=""><img src={logo} alt="logo"/></a> </div>
                                         </div>
                                     </div>
                                 </div>
@@ -45,12 +55,11 @@ function Blog() {
                                             <nav class="main-menu">
                                                 <ul class="menu-area-main">
                                                     <li > <a href="/">Home</a> </li>
-                                                    <li> <a href="about.html">About</a> </li>
-                                                    <li> <a href="product.html">product</a> </li>
-                                                    <li class="active"> <a href="blog.html"> Blog</a> </li>
-                                                    <li> <a href="contact.html">Contact</a> </li>
+                                                    <li> <a href="about">About</a> </li>
+                                                    <li> <a href="product">product</a> </li>
+                                                    <li class="active"> <a href="blog"> Blog</a> </li>
+                                                    <li> <a href="contact">Contact</a> </li>
                                                     <li class="mean-last"> <a href="#contact">signup</a> </li>
-
                                                 </ul>
                                             </nav>
                                         </div>
@@ -92,7 +101,7 @@ function Blog() {
                         <div class="row">
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margin">
                                 <div class="news-box">
-                                    <figure><img src="images/1.jpg" alt="img" /></figure>
+                                    <figure><img src={images1} alt="img 1"/></figure>
                                     <h3>Live With Music</h3>
                                     <span> March 20</span><span>Comment</span>
                                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, </p>
@@ -100,7 +109,8 @@ function Blog() {
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margin">
                                 <div class="news-box">
-                                    <figure><img src="images/2.jpg" alt="img" /></figure>
+                                    <figure><img src={images2} alt="img 2"/></figure>
+                                    {/* <figure><img src="images/2.jpg" alt="img" /></figure> */}
                                     <h3>Best Music</h3>
                                     <span> March 20</span><span>Comment</span>
                                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, </p>
@@ -108,7 +118,8 @@ function Blog() {
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margin">
                                 <div class="news-box">
-                                    <figure><img src="images/3.jpg" alt="img" /></figure>
+                                    <figure><img src={images3} alt="img 3"/></figure>
+                                    {/* <figure><img src="images/3.jpg" alt="img" /></figure> */}
                                     <h3>Live With Music</h3>
                                     <span> March 20</span><span>Comment</span>
                                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, </p>
@@ -116,7 +127,8 @@ function Blog() {
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                                 <div class="news-box">
-                                    <figure><img src="images/3.jpg" alt="img" /></figure>
+                                    <figure><img src={images3} alt="img 3"/></figure>
+                                    {/* <figure><img src="images/3.jpg" alt="img" /></figure> */}
                                     <h3>Live With Music</h3>
                                     <span> March 20</span><span>Comment</span>
                                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, </p>
@@ -124,7 +136,8 @@ function Blog() {
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                                 <div class="news-box">
-                                    <figure><img src="images/1.jpg" alt="img" /></figure>
+                                <figure><img src={images1} alt="img 1"/></figure>
+                                    {/* <figure><img src="images/1.jpg" alt="img" /></figure> */}
                                     <h3>Live With Music</h3>
                                     <span> March 20</span><span>Comment</span>
                                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, </p>
@@ -132,7 +145,8 @@ function Blog() {
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                                 <div class="news-box">
-                                    <figure><img src="images/2.jpg" alt="img" /></figure>
+                                <figure><img src={images2} alt="img 2"/></figure>
+                                    {/* <figure><img src="images/2.jpg" alt="img" /></figure> */}
                                     <h3>Best Music</h3>
                                     <span> March 20</span><span>Comment</span>
                                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, </p>
@@ -200,10 +214,6 @@ function Blog() {
                                 </div>
                             </div>
                         </div>
-                        <div class="copyright">
-                            <p>Copyright 2019 All Right Reserved By <a href="https://html.design/">Free html Templates</a> Distributed By <a href="https://themewagon.com">ThemeWagon </a></p>
-                        </div>
-
                     </div>
                 </footr>
 
