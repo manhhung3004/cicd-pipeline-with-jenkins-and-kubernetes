@@ -4,6 +4,7 @@ import Blog from "../../FE/src/page/blog/blog"
 import About from "../../FE/src/page/about/about"
 import Product from "../../FE/src/page/product/product"
 import Contact from "../../FE/src/page/contact/contact"
+import Login from "../../FE/src/page/login/login"
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/About" element={<About />}></Route>
         <Route path="/Product" element={<Product />}></Route>
         <Route path="/Contact" element={<Contact />}></Route>
+        <Route path="/Login" element={<Login />}></Route>
       </Routes>
     </BrowserRouter>
   )
