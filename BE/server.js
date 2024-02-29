@@ -6,7 +6,7 @@ app.get('/api', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-    });
+});
 
 app.listen( 5173, () =>
     console.log('Web Server is listening at port '));
