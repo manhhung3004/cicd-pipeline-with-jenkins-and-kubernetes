@@ -5,6 +5,7 @@ import About from "../../FE/src/page/about/about"
 import Product from "../../FE/src/page/product/product"
 import Contact from "../../FE/src/page/contact/contact"
 import Login from "../../FE/src/page/login/login"
+import Register from "../../FE/src/page/register/register"
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/Product" element={<Product />}></Route>
         <Route path="/Contact" element={<Contact />}></Route>
         <Route path="/Login" element={<Login />}></Route>
+        <Route path="/Register" element={<Register />}></Route>
       </Routes>
     </BrowserRouter>
   )
