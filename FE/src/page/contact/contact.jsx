@@ -1,7 +1,7 @@
 import { useState } from "react";
-import '../../css/style.css'
-import '../../css/bootstrap.min.css'
-import '../../css/responsive.css'
+// import '../../css/style.css'
+// import '../../css/bootstrap.min.css'
+// import '../../css/responsive.css'
 
 import logo from "../../images/logo.jpg"
 
