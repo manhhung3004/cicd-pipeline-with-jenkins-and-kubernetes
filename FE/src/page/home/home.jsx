@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import '../../css/style.css'
 import '../../css/bootstrap.min.css'
 import '../../css/responsive.css'
@@ -89,7 +90,7 @@ function Home() {
                                                 <li> <a href="product">product</a> </li>
                                                 <li> <a href="blog"> Blog</a> </li>
                                                 <li> <a href="contact">Contact</a> </li>
-                                                <li class="mean-last"> <a href="#contact">signup</a> </li>
+                                                <li class="mean-last"> <a href="Register">signup</a> </li>
                                             </ul>
                                         </nav>
                                     </div>
