@@ -1,15 +1,13 @@
-import { useState } from "react";
 import Home from "../src/page/home/home"
-import Blog from "../../FE/src/page/blog/blog"
-import About from "../../FE/src/page/about/about"
-import Product from "../../FE/src/page/product/product"
-import Contact from "../../FE/src/page/contact/contact"
-import Login from "../../FE/src/page/login/login"
-import Register from "../../FE/src/page/register/register"
+import Blog from "../src/page/blog/blog"
+import About from "../src/page/about/about"
+import Product from "../src/page/product/product"
+import Contact from "../src/page/contact/contact"
+import Login from "../src/page/login/login"
+import Register from "../src/page/register/register"
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0);
   return (
     <BrowserRouter>
       <Routes>
