@@ -31,13 +31,13 @@ AppDataSource.initialize().then(async () => {
     app.listen(3000)
 
     // insert new users for test
-    // await AppDataSource.manager.save(
-    //     AppDataSource.manager.create(User, {
-    //         firstName: "Timber",
-    //         lastName: "Saw",
-    //         age: 27
-    //     })
-    // )
+    await AppDataSource.manager.save(
+        AppDataSource.manager.create(User, {
+            firstName: "Timber",
+            lastName: "Saw",
+            age: 27
+        })
+    )
 
     // await AppDataSource.manager.save(
     //     AppDataSource.manager.create(User, {
