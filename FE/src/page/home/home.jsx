@@ -7,6 +7,7 @@ import '../../css/responsive.css'
 
 import loading from "../../images/loading.gif"
 import banner2 from "../../images/banner2.jpg"
+import banner1 from "../../images/banner1.jpg"
 import logo from "../../images/logo.jpg"
 
 import icon1 from "../../icon/1.png"
@@ -49,8 +50,8 @@ function Home() {
                 <div class="loader"> <img src={loading} alt="loading-in-images"/></div>
             </div> */}
             <header>
-                <div class="header">
-                    <div class="head_top">
+                <div class="header" style={{ backgroundColor: '#fcf5ef' }}>
+                    <div class="head_top" style={{ backgroundColor: '#ff7235' }}>
                         <div class="container">
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
@@ -59,13 +60,12 @@ function Home() {
                                             <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
                                             <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
                                             <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
-                                            <li> <a href="#"><i class="fa fa-linkedin"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                     <div class="top-box">
-                                        <p>long established fact that a reader will be </p>
+                                        <p>Web lỏ design by Manhung ft Dinkhoi </p>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +85,7 @@ function Home() {
                                     <div class="limit-box">
                                         <nav class="main-menu">
                                             <ul class="menu-area-main">
-                                                <li class="active"> <a href="">Home</a> </li>
+                                                <li class="active"> <a href="" style={{ color: '#ff7235' }}>Home</a> </li>
                                                 <li> <a href="about">About</a> </li>
                                                 <li> <a href="product">product</a> </li>
                                                 <li> <a href="blog"> Blog</a> </li>
@@ -97,7 +97,7 @@ function Home() {
                                 </div>
                             </div>
                             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
-                                <li><a class="buy" href="login">Login</a></li>
+                                <li><a class="buy" style={{ backgroundColor: '#ff7235', color: '#fcf5ef' }} href="login">Login</a></li>
                             </div>
                         </div>
                     </div>
@@ -112,23 +112,23 @@ function Home() {
                             <div class="container">
                                 <div class="carousel-caption relative">
                                     <h1>Our <strong class="black_bold">Latest </strong>
-                                        <strong class="yellow_bold">Product </strong></h1>
+                                        <strong class="" style={{ color: '#ff7235' }}>Product </strong></h1>
                                     <p>It is a long established fact that a r
                                         eader will be distracted by the readable content of a page </p>
-                                    <a href="#">see more Products</a>
+                                    <a href="#" style={{ backgroundColor: '#ff7235', color: '#fcf5ef' }}>See more Products</a>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             {/* <img class="second-slide" src="images/banner2.jpg" alt="Second slide"> */}
-                            <img src={banner2} alt="banner-2"/>
+                            <img src={banner1} alt="banner-1"/>
                             <div class="container">
                                 <div class="carousel-caption relative">
                                     <h1>Our <strong class="black_bold">Latest </strong>
                                         <strong class="yellow_bold">Product </strong></h1>
                                     <p>It is a long established fact that a r
                                         eader will be distracted by the readable content of a page </p>
-                                    <a href="#">see more Products</a>
+                                    <a href="#" >See more Products</a>
                                 </div>
                             </div>
                         </div>
@@ -154,21 +154,21 @@ function Home() {
                     </a>
                 </div>
             </section>
-            <div class="whyschose">
+            <div class="whyschose" style={{ backgroundColor: '#fcf5ef' }}>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7 offset-md-3">
                             <div class="title">
-                                <h2>Why <strong class="black">choose us</strong></h2>
+                                <h2 style={{ color: '#ff7235' }}> Why <strong class="black">choose us</strong></h2>
                                 <span>Fastest repair service with best price!</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="choose_bg">
+            <div class="choose_bg" style={{ backgroundColor: '#ff7235' }}>
                 <div class="container">
-                    <div class="white_bg">
+                    <div class="white_bg" style={{ backgroundColor: '#b8d8e0' }}>
                         <div class="row">
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                 <div class="for_box">
@@ -203,25 +203,25 @@ function Home() {
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <a class="read-more">Read More</a>
+                                <a class="read-more" style={{ backgroundColor: '#fcf5ef' }}>Read More</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="service">
+            <div class="service" style={{ backgroundColor: '#fcf5ef' }}>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 offset-md-2">
                             <div class="title">
-                                <h2>Service <strong class="black">Process</strong></h2>
+                                <h2 style={{ color: '#ff7235' }}>Service <strong class="black">Process</strong></h2>
                                 <span>Easy and effective way to get your device repair</span>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <div class="service-box">
+                            <div class="service-box" style={{ backgroundColor: '#ffffff' }}>
                                 {/* <i><img src="icon/service1.png" /></i> */}
                                 <i><img src={service1} alt="service 1"/></i>
                                 <h3>Fast service</h3>
@@ -229,7 +229,7 @@ function Home() {
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <div class="service-box">
+                            <div class="service-box" style={{ backgroundColor: '#ffffff' }}>
                                 {/* <i><img src="icon/service2.png" /></i> */}
                                 <i><img src={service2} alt="service 2"/></i>
                                 <h3>Secure payments</h3>
@@ -237,7 +237,7 @@ function Home() {
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <div class="service-box">
+                            <div class="service-box" style={{ backgroundColor: '#ffffff' }}>
                             <i><img src={service3} alt="service 3"/></i>
                                 {/* <i><img src="icon/service3.png" /></i> */}
                                 <h3>Expert team</h3>
@@ -245,7 +245,7 @@ function Home() {
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <div class="service-box">
+                            <div class="service-box" style={{ backgroundColor: '#ffffff' }}>
                                 {/* <i><img src="icon/service4.png" /></i> */}
                                 <i><img src={service4} alt="service 4"/></i>
                                 <h3>Affordable services</h3>
@@ -253,7 +253,7 @@ function Home() {
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <div class="service-box">
+                            <div class="service-box" style={{ backgroundColor: '#ffffff' }}>
                                 {/* <i><img src="icon/service5.png" /></i> */}
                                 <i><img src={service5} alt="service 5"/></i>
                                 <h3>90 Days warranty</h3>
@@ -261,7 +261,7 @@ function Home() {
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <div class="service-box">
+                            <div class="service-box" style={{ backgroundColor: '#ffffff' }}>
                             <i><img src={service6} alt="service 6"/></i>
                                 {/* <i><img src="icon/service6.png" /></i> */}
                                 <h3>Award winning</h3>
@@ -271,12 +271,12 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <div class="product">
+            <div class="product" style={{ backgroundColor: '#ff7235' }}>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="title">
-                                <h2>our <strong class="black">products</strong></h2>
+                                <h2 style={{ color: '#b8d8e0' }}>our <strong class="black">products</strong></h2>
                                 <span>We package the products with best services to make you a happy customer.</span>
                             </div>
                         </div>
@@ -288,7 +288,7 @@ function Home() {
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                                <div class="product-box">
+                                <div class="product-box" style={{ backgroundColor: '#b8d8e0' }}>
                                     {/* <i><img src="icon/p1.png" /></i> */}
                                     <i><img src={p1} alt="p1"/></i>
                                     <h3>Norton Internet Security</h3>
@@ -296,7 +296,7 @@ function Home() {
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                                <div class="product-box">
+                                <div class="product-box" style={{ backgroundColor: '#b8d8e0' }}>
                                     {/* <i><img src="icon/p2.png" /></i> */}
                                     <i><img src={p2} alt="p2"/></i>
                                     <h3>Norton Internet Security</h3>
@@ -304,7 +304,7 @@ function Home() {
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                                <div class="product-box">
+                                <div class="product-box" style={{ backgroundColor: '#b8d8e0' }}>
                                     {/* <i><img src="icon/p3.png" /></i> */}
                                     <i><img src={p3} alt="p3"/></i>
                                     <h3>Norton Internet Security</h3>
@@ -312,7 +312,7 @@ function Home() {
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                                <div class="product-box">
+                                <div class="product-box" style={{ backgroundColor: '#b8d8e0' }}>
                                     {/* <i><img src="icon/p4.png" /></i> */}
                                     <i><img src={p4} alt="p4"/></i>
                                     <h3>Norton Internet Security</h3>
@@ -320,7 +320,7 @@ function Home() {
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                                <div class="product-box">
+                                <div class="product-box" style={{ backgroundColor: '#b8d8e0' }}>
                                     {/* <i><img src="icon/p5.png" /></i> */}
                                     <i><img src={p5} alt="p5"/></i>
                                     <h3>Norton Internet Security</h3>
@@ -328,7 +328,7 @@ function Home() {
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                                <div class="product-box">
+                                <div class="product-box" style={{ backgroundColor: '#b8d8e0' }}>
                                     {/* <i><img src="icon/p2.png" /></i> */}
                                     <i><img src={p2} alt="p2"/></i>
                                     <h3>Norton Internet Security</h3>
@@ -336,7 +336,7 @@ function Home() {
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                                <div class="product-box">
+                                <div class="product-box" style={{ backgroundColor: '#b8d8e0' }}>
                                     {/* <i><img src="icon/p6.png" /></i> */}
                                     <i><img src={p6} alt="p6"/></i>
                                     <h3>Norton Internet Security</h3>
@@ -344,7 +344,7 @@ function Home() {
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                                <div class="product-box">
+                                <div class="product-box" style={{ backgroundColor: '#b8d8e0' }}>
                                     {/* <i><img src="icon/p7.png" /></i> */}
                                     <i><img src={p7} alt="p7"/></i>
                                     <h3>Norton Internet Security</h3>
@@ -409,7 +409,7 @@ function Home() {
                     </div>
                 </div> */}
                 <div class="container">
-                    <div class="yellow_bg">
+                    <div class="yellow_bg"  style={{ backgroundColor: '#ff7235' }}>
                         <div class="row">
                             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
                                 <div class="yellow-box">
@@ -440,7 +440,6 @@ function Home() {
                                     <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
                                     <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
                                     <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -448,9 +447,8 @@ function Home() {
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                 <div class="contact">
                                     <h3>conatct us</h3>
-                                    <span>123 Second Street Fifth Avenue,
-                                        Manhattan, New York
-                                        +987 654 3210</span>
+                                    <span>Di An city, Binh Duong, Viet Nam
+                                        +847 777 8888</span>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
