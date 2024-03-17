@@ -1,30 +1,66 @@
 {
+
    "name": "be",
+
    "version": "1.0.0",
+
    "description": "",
+
    "main": "server.js",
+
    "scripts": {
+
       "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "ts-node src/index.ts",
+
+      "start": "nodemon server.js",
+
       "dev": "nodemon server",
+
       "typeorm": "typeorm-ts-node-commonjs"
+
    },
+
    "keywords": [],
+
    "author": "",
+
    "license": "ISC",
+
    "devDependencies": {
+
       "@types/node": "^16.11.10",
+
       "dotenv": "^16.4.5",
+
       "nodemon": "^3.1.0",
+
       "ts-node": "10.9.1",
+
       "typescript": "4.5.2"
+
    },
+
    "dependencies": {
+
+      "body-parser": "^1.20.2",
+
+      "cors": "^2.8.5",
+
       "ejs": "^3.1.9",
-      "express": "^4.17.2",
-      "pg": "^8.4.0",
+
+      "express": "^4.18.3",
+
+      "pg": "^8.11.3",
+
+      "pg-hstore": "^2.3.4",
+
       "reflect-metadata": "^0.1.13",
-      "typeorm": "0.3.20",
-      "body-parser": "^1.19.1"
+
+      "sequelize": "^6.37.1",
+
+      "sqlite3": "^5.1.7"
+
    }
+
 }
+
