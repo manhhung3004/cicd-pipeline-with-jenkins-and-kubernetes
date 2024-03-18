@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import styles from "./login.module.css";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
 
 function Login() {
+    const notifysuccessful = async () => toast("Login successful!");
+    const notifyfail = () => toast("Login fail!");
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -17,9 +21,21 @@ function Login() {
             console.log(response.data);
             if (response.status === 200) {
                 // Chuyển hướng người dùng đến trang home
+                //  await notifysuccessful;
+                // toast.success('Login successful!', {
+                //     position: "top-right",
+                //     autoClose: 2000, // Thời gian tự đóng thông báo sau 2 giây
+                //     hideProgressBar: false,
+                //     closeOnClick: true,
+                //     pauseOnHover: true,
+                //     draggable: true,
+                //     progress: undefined,
+                // });
+                await alert("Doneee");
                 window.location.href = "/"; // Thay đổi đường dẫn tùy theo cấu trúc của ứng dụng của bạn
             } else {
                 // Xử lý khi đăng nhập không thành công (nếu cần)
+                notifyfail;
             }
         } catch (error) {
             console.error("Login error:", error);

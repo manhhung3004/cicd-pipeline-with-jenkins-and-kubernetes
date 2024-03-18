@@ -2,7 +2,7 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const sequelize = require('./util/database.js');
 const User = require('./model/Customer.js');
-const Customer = require('./routes/users.js');
+const CustomerRoute = require('./routes/users.js');
 const cors = require('cors');
 
 const app = express();
@@ -15,6 +15,9 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   next();
 });
+
+app.use("/auth",CustomerRoute);
+
 
 // CRUD routes
 app.use('/Customer', require('./routes/users'));
@@ -36,7 +39,6 @@ app.post('/login', async (req, res, next) => {
   try {
     // Kiểm tra xem người dùng có tồn tại trong cơ sở dữ liệu hay không
     const user = await User.findOne({ where: { email: email, password: password },limit: 1 });
-    console.log("Signal to here");
     if (user) {
       res.status(200).json({ message: 'Login successful!' });
       console.log("login successful");
