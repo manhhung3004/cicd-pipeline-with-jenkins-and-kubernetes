@@ -6,6 +6,7 @@ import Contact from "../src/page/contact/contact"
 import Login from "../src/page/login/login"
 import Register from "../src/page/register/register"
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Profile from "./page/profile/profile"
 
 function App() {
   return (
@@ -18,44 +19,11 @@ function App() {
         <Route path="/Contact" element={<Contact />}></Route>
         <Route path="/Login" element={<Login />}></Route>
         <Route path="/Register" element={<Register />}></Route>
+        <Route path="/Profile" element={<Profile />}></Route>
+
       </Routes>
     </BrowserRouter>
   )
 }
 
 export default App;
-// ----------------------------
-// import React, { useState, useEffect } from "react";
-// import axios from "axios";
-
-// const App = () => {
-//   const [users, setUsers] = useState([]);
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         // Gửi yêu cầu GET tới địa chỉ /users trên server
-//         const response = await axios.get("http://localhost:5000/users");
-//         // Cập nhật state users với dữ liệu nhận được từ server
-//         setUsers(response.data);
-//       } catch (error) {
-//         console.error("Error fetching data:", error);
-//       }
-//     };
-
-//     fetchData(); // Gọi hàm fetchData khi component được mount
-//   }, []); // useEffect này sẽ chỉ được gọi một lần sau khi component được mount
-
-//   return (
-//     <div>
-//       <h1>User List</h1>
-//       <ul>
-//         {users.map(user => (
-//           <li key={user.id}>{user.name}</li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
-
-// export default App;

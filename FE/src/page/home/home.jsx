@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import { login, logout } from './login';
-import '../../css/style.css'
-import '../../css/bootstrap.min.css'
-import '../../css/responsive.css'
+// import { login, logout } from './login';
+import Header from "../header"
 import './home.css';
 import { useDispatch, useSelector } from 'react-redux';
+
 
 import loading from "../../images/loading.gif"
 import banner2 from "../../images/banner2.jpg"
@@ -48,75 +47,8 @@ function Home() {
     };
     return (
         <div>
-            <header>
-                <link rel="stylesheet" href="css/bootstrap.min.css" />
-                <link rel="stylesheet" href="css/style.css" />
-                <link rel="stylesheet" href="css/responsive.css" />
-                <link rel="icon" href="images/fevicon.png" type="image/gif" />
-                <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css" />
-            </header>
             <div class="main-layout">
-                {/* <div class="loader_bg">
-                <div class="loader"> <img src={loading} alt="loading-in-images"/></div>
-            </div> */}
-                <header>
-                    <div class="header" style={{ backgroundColor: '#fcf5ef' }}>
-                        <div class="head_top" style={{ backgroundColor: '#ff7235' }}>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                        <div class="top-box">
-                                            <ul class="sociel_link">
-                                                <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                                <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                        <div class="top-box">
-                                            <p>Web lỏ design by Manhung ft Dinkhoi </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
-                                    <div class="full">
-                                        <div class="center-desk">
-                                            <div class="logo"> <a href=""><img src={logo} alt="logo" /></a> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-7 col-lg-7 col-md-9 col-sm-9">
-                                    <div class="menu-area">
-                                        <div class="limit-box">
-                                            <nav class="main-menu">
-                                                <ul class="menu-area-main">
-                                                    <li class="active"> <a href="" style={{ color: '#ff7235' }}>Home</a> </li>
-                                                    <li> <a href="about">About</a> </li>
-                                                    <li> <a href="product">product</a> </li>
-                                                    <li> <a href="blog"> Blog</a> </li>
-                                                    <li> <a href="contact">Contact</a> </li>
-                                                    <li class="mean-last"> <a href="Register">signup</a> </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2" id="loginContainer">
-                                    {isLoggedIn ? (
-                                        <li id="logoutButton"><a class="buy" style={{ backgroundColor: '#ff7235', color: '#fcf5ef' }} href="#" onClick={handleLogout}>Logout</a></li>
-                                    ) : (
-                                        <li id="loginButton"><a class="buy" style={{ backgroundColor: '#ff7235', color: '#fcf5ef' }} href="/login" onClick={handleLogin}>Login</a></li>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </header>
+                <Header/>
                 <section class="slider_section">
                     <div id="main_slider" class="carousel slide banner-main" data-ride="carousel">
                         <div class="carousel-inner">
@@ -182,7 +114,7 @@ function Home() {
                 </div>
                 <div class="choose_bg" style={{ backgroundColor: '#ff7235' }}>
                     <div class="container">
-                        <div class="white_bg" style={{ backgroundColor: '#b8d8e0' }}>
+                        <div class="white_bg">
                             <div class="row">
                                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                     <div class="for_box">
@@ -285,7 +217,7 @@ function Home() {
                         </div>
                     </div>
                 </div>
-                <div class="product" style={{ backgroundColor: '#ff7235' }}>
+                <div class="product"  style={{ backgroundColor: '#ff7235' }}>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -302,7 +234,7 @@ function Home() {
                         <div class="container">
                             <div class="row">
                                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                                    <div class="product-box" style={{ backgroundColor: '#b8d8e0' }}>
+                                    <div class="product-box"style={{ backgroundColor: '#b8d8e0' }}>
                                         {/* <i><img src="icon/p1.png" /></i> */}
                                         <i><img src={p1} alt="p1" /></i>
                                         <h3>Norton Internet Security</h3>
@@ -505,4 +437,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Home;

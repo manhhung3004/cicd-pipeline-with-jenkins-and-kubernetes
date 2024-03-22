@@ -73,7 +73,7 @@ function Login() {
                                 </div>
                                 {error && <div className={styles.error}>{error}</div>}
                                 <div className={styles["form-link"]}>
-                                    <button type="submit">Login</button>
+                                    <button className={styles["submit"]} type="submit">Login</button>
                                 </div>
                             </form>
                             <div className={styles["form-link"]}>

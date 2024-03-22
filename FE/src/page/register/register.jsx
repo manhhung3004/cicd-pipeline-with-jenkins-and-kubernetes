@@ -94,7 +94,7 @@ function Register() {
                             </div>
                         </form>
                         <div className={styles["form-link"]}>
-                            <span>Already have an account? <a href="#" className={`${styles.link} ${styles["login-link"]}`}>Login</a></span>
+                            <span>Already have an account? <a href="/login" className={`${styles.link} ${styles["login-link"]}`}>Login</a></span>
                         </div>
                     </div>
                     <div className={styles["line"]}></div>
