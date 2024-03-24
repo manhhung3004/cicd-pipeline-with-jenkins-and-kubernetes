@@ -1,5 +1,5 @@
 # Use official Node.js image as base image
-FROM node:18.18-alpine
+FROM node:20.11-alpine
 # Set the working directory in the container
 WORKDIR /app
 # Copy the entire project to the working directory

@@ -43,6 +43,7 @@ function Header({ isLoggedIn, handleLogout, handleLogin }) {
                                                 <ul class="menu-area-main">
                                                     <li class="active"> <a href="/" style={{ color: '#ff7235' }}>Home</a> </li>
                                                     <li> <a href="/About">About</a> </li>
+                                                    <li> <a href="/Services">Services</a> </li>
                                                     <li> <a href="/Product">product</a> </li>
                                                     <li> <a href="/Blog"> Blog</a> </li>
                                                     <li> <a href="/Contact">Contact</a> </li>

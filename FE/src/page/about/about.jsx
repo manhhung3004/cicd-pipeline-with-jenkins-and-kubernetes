@@ -13,71 +13,16 @@ import service4 from "../../icon/service4.png"
 import service5 from "../../icon/service5.png"
 import service6 from "../../icon/service6.png"
 
+import Header from "../header"
+
 function About() {
     return (
         <div class="main-layout">
             {/* <div class="loader_bg">
                 <div class="loader"><img src="images/loading.gif" alt="#" /></div>
             </div> */}
-            <header>
-                <div class="header">
-                    <div class="head_top">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                    <div class="top-box">
-                                        <ul class="sociel_link">
-                                            <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                            <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
-                                            <li> <a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                    <div class="top-box">
-                                        <p>long established fact that a reader will be </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
-                                <div class="full">
-                                    <div class="center-desk">
-                                        <div class="logo"> <a href=""><img src={logo} alt="logo"/></a> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-7 col-lg-7 col-md-9 col-sm-9">
-                                <div class="menu-area">
-                                    <div class="limit-box">
-                                        <nav class="main-menu">
-                                            <ul class="menu-area-main">
-                                                <li> <a href="/">Home</a> </li>
-                                                <li class="active"> <a href="about">About</a> </li>
-                                                <li> <a href="product">product</a> </li>
-                                                <li> <a href="blog"> Blog</a> </li>
-                                                <li> <a href="contact">Contact</a> </li>
-                                                <li class="mean-last"> <a href="#contact">signup</a> </li>
-
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
-                                <li><a class="buy" href="#">Login</a></li>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </header>
-
-            <div class="brand_color">
+            <Header />
+            <div class="brand_color"  style={{ backgroundColor: '#ff7235' }}>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -87,11 +32,10 @@ function About() {
                         </div>
                     </div>
                 </div>
-
             </div>
 
 
-            <div class="about">
+            <div class="about" >
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
@@ -123,7 +67,7 @@ function About() {
                     </div>
                 </div>
             </div>
-            <div class="choose_bg">
+            <div class="choose_bg"  style={{ backgroundColor: '#ff7235' }}>
                 <div class="container">
                     <div class="white_bg">
                         <div class="row">
@@ -166,7 +110,7 @@ function About() {
                 </div>
             </div>
 
-            <div class="service">
+            <div class="service" >
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 offset-md-2">

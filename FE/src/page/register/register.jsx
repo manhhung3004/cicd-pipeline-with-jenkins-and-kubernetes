@@ -17,7 +17,6 @@ function Register() {
         e.preventDefault();
         // Add your form submission logic here
     };
-
     return (
         <div className={styles.container}>
             <section className={styles.forms}>

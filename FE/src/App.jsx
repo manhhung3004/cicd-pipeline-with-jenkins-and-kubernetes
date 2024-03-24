@@ -7,6 +7,7 @@ import Login from "../src/page/login/login"
 import Register from "../src/page/register/register"
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Profile from "./page/profile/profile"
+import Services from "./page/services/services.jsx"
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Route path="/Login" element={<Login />}></Route>
         <Route path="/Register" element={<Register />}></Route>
         <Route path="/Profile" element={<Profile />}></Route>
-
+        <Route path="/Services" element={<Services />}></Route>
       </Routes>
     </BrowserRouter>
   )
