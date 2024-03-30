@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+  #Container BE
+  backend:
+    build:
+      context: ./BE/
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3000:3000"  # Port mà ứng dụng backend chạy
+    volumes:
+      - backend-cache:/code/target
+    depends_on:
+      - database # Đảm bảo rằng service backend sẽ chờ cho service database khởi động xong trước khi bắt đầu chạy
+    networks:
+      - app-network
+  #container database
+  database:
+    image: postgres:latest
+    container_name: db
+    restart: always
+    tty: true
+    ports:
+      - "5432:5432"  # Port mà PostgreSQL chạy
+    environment:
+      POSTGRES_USER: ${USER_NAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - app-network
+#using web interface to useful
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pgadmin.com
+      PGADMIN_DEFAULT_PASSWORD: mypgadminpass
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - database
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  backend-cache: {}
+  db-data: {}
+  pgadmin_data: {}
