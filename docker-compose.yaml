@@ -32,7 +32,7 @@ services:
       - db-data:/var/lib/postgresql/data
     networks:
       - app-network
-#using web interface to useful
+  #using web interface to useful
   pgadmin:
     image: dpage/pgadmin4
     restart: always
@@ -45,7 +45,9 @@ services:
       - pgadmin_data:/var/lib/pgadmin
     depends_on:
       - database
-      #Container BE
+    networks:
+      - app-network
+  #Container FE
   frontend:
     build:
       context: ./FE/
