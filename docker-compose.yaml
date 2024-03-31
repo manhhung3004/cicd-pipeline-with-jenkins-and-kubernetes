@@ -45,6 +45,19 @@ services:
       - pgadmin_data:/var/lib/pgadmin
     depends_on:
       - database
+      #Container BE
+  frontend:
+    build:
+      context: ./FE/
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"  # Port mà ứng dụng backend chạy
+    depends_on:
+      - database # Đảm bảo rằng service backend sẽ chờ cho service database khởi động xong trước khi bắt đầu chạy
+    networks:
+      - app-network
 #Docker Networks
 networks:
   app-network:
