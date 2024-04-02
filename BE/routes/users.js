@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../controller/Customer');
+const customer = require ('../model/Customer')
+const route = express.Router();
 
 // Parse JSON request body
 router.use(express.json());

@@ -1,0 +1,13 @@
+.menu-area-main {
+    text-align: center;
+}
+
+.menu-item {
+    display: inline-block;
+    margin: 0 10px; /* hoặc bất kỳ khoảng cách nào bạn muốn */
+}
+
+/* Hide all tab content by default */
+.tabcontent {
+    display: none;
+}
