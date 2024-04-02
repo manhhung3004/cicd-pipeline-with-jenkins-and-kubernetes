@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  #Container BE
+  # Container BE
   backend:
     build:
       context: ./BE/
@@ -12,11 +12,11 @@ services:
       - "3000:3000"  # Port mà ứng dụng backend chạy
     volumes:
       - backend-cache:/code/target
-    depends_on:
-      - database # Đảm bảo rằng service backend sẽ chờ cho service database khởi động xong trước khi bắt đầu chạy
     networks:
-      - app-network
-  #container database
+      app-network:
+        ipv4_address: 172.18.0.4 # Địa chỉ IP cố định cho container BE
+
+  # Container Database
   database:
     image: postgres:latest
     container_name: db
@@ -31,8 +31,10 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
     networks:
-      - app-network
-  #using web interface to useful
+      app-network:
+        ipv4_address: 172.18.0.3 # Địa chỉ IP cố định cho container database
+
+  # Container pgAdmin
   pgadmin:
     image: dpage/pgadmin4
     restart: always
@@ -46,8 +48,9 @@ services:
     depends_on:
       - database
     networks:
-      - app-network
-  #Container FE
+      app-network: null # Chỉ định networks là null cho pgadmin
+
+  # Container FE
   frontend:
     build:
       context: ./FE/
@@ -55,15 +58,21 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "80:80"  # Port mà ứng dụng backend chạy
+      - "80:80"  # Port mà ứng dụng frontend chạy
     depends_on:
       - database # Đảm bảo rằng service backend sẽ chờ cho service database khởi động xong trước khi bắt đầu chạy
     networks:
-      - app-network
-#Docker Networks
+      app-network:
+        ipv4_address: 172.18.0.5 # Địa chỉ IP cố định cho container frontend
+
+# Docker Networks
 networks:
   app-network:
     driver: bridge
+    ipam:
+      config: 
+        - subnet: 172.18.0.0/16
+          gateway: 172.18.0.1
 
 volumes:
   backend-cache: {}
