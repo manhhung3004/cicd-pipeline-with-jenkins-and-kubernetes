@@ -1,0 +1,103 @@
+pipeline {
+    agent any
+
+    environment {
+        registry = "mahhhuhh/ishopdockerhub"
+        fe_image = "${registry}/fe"
+        be_image = "${registry}/be"
+    }
+
+    stages {
+        stage('checkout github') {
+            steps {
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkins-pipeline', url: 'https://github.com/manhhung3004/ishop.git']])
+            }
+        }
+
+        stage('determine changes') {
+            steps {
+                script {
+                    // Get the list of changed files
+                    def changedFiles = sh(script: 'git diff --name-only HEAD~1 HEAD', returnStdout: true).trim().split('\n')
+                    echo "Changed files: ${changedFiles}"
+
+                    // Determine if changes are in FE or BE
+                    def feChanges = changedFiles.any { it.startsWith('FE/') }
+                    def beChanges = changedFiles.any { it.startsWith('BE/') }
+
+                    // Set environment variables to indicate which parts need to be built
+                    env.BUILD_FE = feChanges ? "true" : "false"
+                    env.BUILD_BE = beChanges ? "true" : "false"
+                }
+            }
+        }
+
+        stage('build docker images') {
+            parallel {
+                stage('build FE') {
+                    when {
+                        expression { env.BUILD_FE == "true" }
+                    }
+                    steps {
+                        script {
+                            dir('FE') {
+                                // Build the FE Docker image
+                                sh 'docker-compose build fe_service'
+                                // Tag the image
+                                sh "docker tag fe_service ${fe_image}:latest"
+                            }
+                        }
+                    }
+                }
+                stage('build BE') {
+                    when {
+                        expression { env.BUILD_BE == "true" }
+                    }
+                    steps {
+                        script {
+                            dir('BE') {
+                                // Build the BE Docker image
+                                sh 'docker-compose build be_service'
+                                // Tag the image
+                                sh "docker tag be_service ${be_image}:latest"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('push docker images') {
+            parallel {
+                stage('push FE') {
+                    when {
+                        expression { env.BUILD_FE == "true" }
+                    }
+                    steps {
+                        script {
+                            withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_HUB_USERNAME')]) {
+                                sh 'echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin'
+                                // Push the FE image
+                                sh "docker push ${fe_image}:latest"
+                            }
+                        }
+                    }
+                }
+                stage('push BE') {
+                    when {
+                        expression { env.BUILD_BE == "true" }
+                    }
+                    steps {
+                        script {
+                            withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_HUB_USERNAME')]) {
+                                sh 'echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin'
+                                // Push the BE image
+                                sh "docker push ${be_image}:latest"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
