@@ -2,9 +2,8 @@ pipeline {
     agent any
 
     environment {
-        registry = "mahhhuhh/ishopdockerhub"
-        fe_image = "${registry}/fe"
-        be_image = "${registry}/be"
+        DOCKER_IMAGE_FE = 'ishop-pipeline2_frontend'
+        DOCKER_IMAGE_BE = 'ishop-pipeline2_backend'
     }
 
     stages {
@@ -43,8 +42,7 @@ pipeline {
                             dir('FE') {
                                 // Build the FE Docker image aaa
                                 sh 'docker-compose build frontend'
-                                // Tag the image
-                                sh "docker tag frontend ${fe_image}:latest"
+                                sh "docker tag frontend ${DOCKER_IMAGE_FE}:latest"
                             }
                         }
                     }
@@ -58,8 +56,7 @@ pipeline {
                             dir('BE') {
                                 // Build the BE Docker image
                                 sh 'docker-compose build backend'
-                                // Tag the image
-                                sh "docker tag backend ishop-pipeline2_backend:latest"
+                                sh "docker tag backend ${DOCKER_IMAGE_BE}:latest"
                             }
                         }
                     }
@@ -78,7 +75,7 @@ pipeline {
                             withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_HUB_USERNAME')]) {
                                 sh 'echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin'
                                 // Push the FE image
-                                sh "docker push ${fe_image}:latest"
+                                sh "docker push ${DOCKER_IMAGE_FE}:latest"
                             }
                         }
                     }
@@ -92,7 +89,7 @@ pipeline {
                             withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_HUB_USERNAME')]) {
                                 sh 'echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin'
                                 // Push the BE image
-                                sh "docker push ishop-pipeline2_backend:latest"
+                                sh "docker push ${DOCKER_IMAGE_BE}:latest"
                             }
                         }
                     }
