@@ -42,9 +42,9 @@ pipeline {
                         script {
                             dir('FE') {
                                 // Build the FE Docker image
-                                sh 'docker-compose build fe_service'
+                                sh 'docker-compose build frontend'
                                 // Tag the image
-                                sh "docker tag fe_service ${fe_image}:latest"
+                                sh "docker tag frontend ${fe_image}:latest"
                             }
                         }
                     }
@@ -57,9 +57,9 @@ pipeline {
                         script {
                             dir('BE') {
                                 // Build the BE Docker image
-                                sh 'docker-compose build be_service'
+                                sh 'docker-compose build backend'
                                 // Tag the image
-                                sh "docker tag be_service ${be_image}:latest"
+                                sh "docker tag backend ${be_image}:latest"
                             }
                         }
                     }
