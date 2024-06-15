@@ -55,7 +55,7 @@ pipeline {
                     }
                     steps {
                         script {
-                            dir('BE') {z
+                            dir('BE') {
                                 // Build the BE Docker image
                                 sh 'docker-compose build backend'
                                 // Tag the image
