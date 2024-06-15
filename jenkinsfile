@@ -59,7 +59,7 @@ pipeline {
                                 // Build the BE Docker image
                                 sh 'docker-compose build backend'
                                 // Tag the image
-                                sh "docker tag backend ${be_image}:latest"
+                                sh "docker tag backend ishop-pipeline2_backend:latest"
                             }
                         }
                     }
