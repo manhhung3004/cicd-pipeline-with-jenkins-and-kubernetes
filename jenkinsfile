@@ -16,7 +16,7 @@ pipeline {
         stage('determine changes') {
             steps {
                 script {
-                    // Get the list of changed files aa
+                    // Get the list of changed files
                     def changedFiles = sh(script: 'git diff --name-only HEAD~1 HEAD', returnStdout: true).trim().split('\n')
                     echo "Changed files: ${changedFiles}"
 
@@ -27,8 +27,9 @@ pipeline {
                     // Set environment variables to indicate which parts need to be built
                     env.BUILD_FE = feChanges ? "true" : "false"
                     env.BUILD_BE = beChanges ? "true" : "false"
+                    echo "Build FE: ${env.BUILD_FE}, Build BE: ${env.BUILD_BE}"
                 }
-            }
+            } 
         }
 
         stage('build docker images') {
@@ -40,9 +41,15 @@ pipeline {
                     steps {
                         script {
                             dir('FE') {
-                                // Build the FE Docker image aaa
-                                sh 'docker-compose build frontend'
-                                sh "docker tag frontend ${DOCKER_IMAGE_FE}:latest"
+                                // Build the FE Docker image
+                                echo "Building FE Docker image..."
+                                def buildResult = sh(script: 'docker-compose build frontend', returnStatus: true)
+                                if(buildResult != 0){
+                                    error "Build FE Docker image failed"
+                                } else {
+                                    sh "docker tag frontend ${DOCKER_IMAGE_FE}:latest"
+                                    echo "Tagged FE Docker image as ${DOCKER_IMAGE_FE}:latest"
+                                }
                             }
                         }
                     }
@@ -55,8 +62,14 @@ pipeline {
                         script {
                             dir('BE') {
                                 // Build the BE Docker image
-                                sh 'docker-compose build backend'
-                                sh "docker tag backend ${DOCKER_IMAGE_BE}:latest"
+                                echo "Building BE Docker image..."
+                                def buildResult = sh(script: 'docker-compose build backend', returnStatus: true)
+                                if(buildResult != 0){
+                                    error "Build BE Docker image failed"
+                                } else {
+                                    sh "docker tag backend ${DOCKER_IMAGE_BE}:latest"
+                                    echo "Tagged BE Docker image as ${DOCKER_IMAGE_BE}:latest"
+                                }
                             }
                         }
                     }
@@ -75,6 +88,7 @@ pipeline {
                             withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_HUB_USERNAME')]) {
                                 sh 'echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin'
                                 // Push the FE image
+                                echo "Pushing FE Docker image..."
                                 sh "docker push ${DOCKER_IMAGE_FE}:latest"
                             }
                         }
@@ -89,6 +103,7 @@ pipeline {
                             withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_HUB_USERNAME')]) {
                                 sh 'echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin'
                                 // Push the BE image
+                                echo "Pushing BE Docker image..."
                                 sh "docker push ${DOCKER_IMAGE_BE}:latest"
                             }
                         }
@@ -98,5 +113,3 @@ pipeline {
         }
     }
 }
-
-// taggg
