@@ -92,7 +92,7 @@ pipeline {
                             withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_HUB_USERNAME')]) {
                                 sh 'echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin'
                                 // Push the BE image
-                                sh "docker push ${be_image}:latest"
+                                sh "docker push ishop-pipeline2_backend:latest"
                             }
                         }
                     }
