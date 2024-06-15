@@ -41,7 +41,7 @@ pipeline {
                     steps {
                         script {
                             dir('FE') {
-                                // Build the FE Docker image
+                                // Build the FE Docker image aaa
                                 sh 'docker-compose build frontend'
                                 // Tag the image
                                 sh "docker tag frontend ${fe_image}:latest"
@@ -55,7 +55,7 @@ pipeline {
                     }
                     steps {
                         script {
-                            dir('BE') {
+                            dir('BE') {z
                                 // Build the BE Docker image
                                 sh 'docker-compose build backend'
                                 // Tag the image
