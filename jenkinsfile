@@ -47,7 +47,7 @@ pipeline {
                                 if(buildResult != 0){
                                     error "Build FE Docker image failed"
                                 } else {
-                                    // sh "docker tag frontend ${DOCKER_IMAGE_FE}:latest"
+                                    sh "docker tag ${DOCKER_IMAGE_FE}:latest mahhhuhh/ishopdockerhub:firstimagepush"
                                     echo "Tagged FE Docker image as ${DOCKER_IMAGE_FE}:latest"
                                     // sh "docker images"
                                 }
