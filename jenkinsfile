@@ -7,14 +7,13 @@ pipeline {
     }
 
     stages {
+
         stage('Checkout') {
             steps {
                 checkout scm
             }
         }
-    }
 
-    stages {
         stage('Checkout GitHub') {
             steps {
                 checkout scm: git(branch: 'main', credentialsId: 'jenkins-pipeline', url: 'https://github.com/manhhung3004/ishop.git')
