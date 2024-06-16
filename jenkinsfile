@@ -89,7 +89,7 @@ pipeline {
                                 sh 'echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin'
                                 // Push the FE image
                                 echo "Pushing FE Docker image..."
-                                sh "docker push ${DOCKER_IMAGE_FE}:latest"
+                                sh "docker push mahhhuhh/ishopdockerhub:firstimagepush"
                             }
                         }
                     }
