@@ -80,9 +80,6 @@ pipeline {
             when {
                 branch 'main'
             }
-            agent{
-                kubernetes
-            }
             steps {
                 script {
                     // Deploy Frontend
@@ -115,7 +112,7 @@ pipeline {
                         }
                     }
 
-                    
+
                 }
             }
         }
