@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: FE
+spec:
+  selector:
+    matchLabels:
+      app: FE
+  template:
+    metadata:
+      labels:
+        app: FE
+    spec:
+      containers:
+      - name: FE
+        image: <Image>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8282

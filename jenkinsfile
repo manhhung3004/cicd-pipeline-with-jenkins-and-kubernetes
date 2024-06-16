@@ -7,13 +7,13 @@ pipeline {
     }
 
     stages {
-        stage('checkout github') {
+        stage('Checkout GitHub') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkins-pipeline', url: 'https://github.com/manhhung3004/ishop.git']])
+                checkout scm: git(branch: 'main', credentialsId: 'jenkins-pipeline', url: 'https://github.com/manhhung3004/ishop.git')
             }
         }
 
-        stage('determine changes') {
+        stage('Determine changes') {
             steps {
                 script {
                     // Get the list of changed files
@@ -29,12 +29,12 @@ pipeline {
                     env.BUILD_BE = beChanges ? "true" : "false"
                     echo "Build FE: ${env.BUILD_FE}, Build BE: ${env.BUILD_BE}"
                 }
-            } 
+            }
         }
 
-        stage('build docker images') {
+        stage('Build and push Docker images') {
             parallel {
-                stage('build FE') {
+                stage('Build FE') {
                     when {
                         expression { env.BUILD_FE == "true" }
                     }
@@ -43,19 +43,18 @@ pipeline {
                             dir('FE') {
                                 // Build the FE Docker image
                                 echo "Building FE Docker image..."
-                                def buildResult = sh(script: 'docker-compose build frontend', returnStatus: true)
-                                if(buildResult != 0){
-                                    error "Build FE Docker image failed"
-                                } else {
-                                    sh "docker tag ${DOCKER_IMAGE_FE}:latest mahhhuhh/ishopdockerhub:firstimagepush"
-                                    echo "Tagged FE Docker image as ${DOCKER_IMAGE_FE}:latest"
-                                    // sh "docker images"
-                                }
+                                sh 'docker-compose build frontend'
+
+                                // Tag and push the FE image
+                                sh "docker tag ${DOCKER_IMAGE_FE}:latest mahhhuhh/ishopdockerhub:FE"
+                                sh "docker push mahhhuhh/ishopdockerhub:FE"
+                                echo "Pushed FE Docker image"
                             }
                         }
                     }
                 }
-                stage('build BE') {
+
+                stage('Build BE') {
                     when {
                         expression { env.BUILD_BE == "true" }
                     }
@@ -64,50 +63,59 @@ pipeline {
                             dir('BE') {
                                 // Build the BE Docker image
                                 echo "Building BE Docker image..."
-                                def buildResult = sh(script: 'docker-compose build backend', returnStatus: true)
-                                if(buildResult != 0){
-                                    error "Build BE Docker image failed"
-                                } else {
-                                    echo "Tagged BE Docker image as ${DOCKER_IMAGE_BE}:latest"
-                                }
+                                sh 'docker-compose build backend'
+                                echo "Built BE Docker image"
+
+                                // Tag and push the BE image
+                                sh "docker tag ${DOCKER_IMAGE_BE}:latest mahhhuhh/ishopdockerhub:BE"
+                                sh "docker push mahhhuhh/ishopdockerhub:BE"
+                                echo "Pushed BE Docker image"
                             }
                         }
                     }
                 }
             }
         }
+        stage('Deploy to Kubernetes') {
+            when {
+                branch 'main'
+            }
+            agent{
+                kubernetes
+            }
+            steps {
+                script {
+                    // Deploy Frontend
+                    if (env.BUILD_FE == "true") {
+                        withKubeCredentials(kubectlCredentials: [[
+                            caCertificate: '',
+                            clusterName: 'kubernetes',
+                            contextName: 'kubernetes-admin@kubernetes',
+                            credentialsId: 'jenkins-kind',
+                            namespace: 'ishop',
+                            serverUrl: 'https://192.168.219.148:6443'
+                        ]]) {
+                            sh "kubectl apply -f deployment-fe.yaml -n ishop"
+                            echo "Deployed FE to Kubernetes"
+                        }
+                    }
 
-        stage('push docker images') {
-            parallel {
-                stage('push FE') {
-                    when {
-                        expression { env.BUILD_FE == "true" }
-                    }
-                    steps {
-                        script {
-                            withCredentials([usernamePassword(credentialsId: 'jenkins-dockerhub-ishop', passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_HUB_USERNAME')]) {
-                                sh 'echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin'
-                                // Push the FE image
-                                echo "Pushing FE Docker image..."
-                                sh "docker push mahhhuhh/ishopdockerhub:firstimagepush"
-                            }
+                    // Deploy Backend
+                    if (env.BUILD_BE == "true") {
+                        withKubeCredentials(kubectlCredentials: [[
+                            caCertificate: '',
+                            clusterName: 'kubernetes',
+                            contextName: 'kubernetes-admin@kubernetes',
+                            credentialsId: 'jenkins-kind',
+                            namespace: 'ishop',
+                            serverUrl: 'https://192.168.219.148:6443'
+                        ]]) {
+                            sh "kubectl apply -f deployment-be.yaml -n ishop"
+                            echo "Deployed BE to Kubernetes"
                         }
                     }
-                }
-                stage('push BE') {
-                    when {
-                        expression { env.BUILD_BE == "true" }
-                    }
-                    steps {
-                        script {
-                            withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_HUB_USERNAME')]) {
-                                sh 'echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin'
-                                // Push the BE image
-                                echo "Pushing BE Docker image..."
-                                sh "docker push ${DOCKER_IMAGE_BE}:latest"
-                            }
-                        }
-                    }
+
+                    
                 }
             }
         }
