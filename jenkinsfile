@@ -85,7 +85,7 @@ pipeline {
                     }
                     steps {
                         script {
-                            withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_HUB_USERNAME')]) {
+                            withCredentials([usernamePassword(credentialsId: 'jenkins-dockerhub-ishop', passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_HUB_USERNAME')]) {
                                 sh 'echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin'
                                 // Push the FE image
                                 echo "Pushing FE Docker image..."
