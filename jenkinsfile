@@ -49,6 +49,7 @@ pipeline {
                                 } else {
                                     sh "docker tag frontend ${DOCKER_IMAGE_FE}:latest"
                                     echo "Tagged FE Docker image as ${DOCKER_IMAGE_FE}:latest"
+                                    echo "docker images"
                                 }
                             }
                         }
