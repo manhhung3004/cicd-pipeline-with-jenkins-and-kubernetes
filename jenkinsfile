@@ -67,7 +67,6 @@ pipeline {
                                 if(buildResult != 0){
                                     error "Build BE Docker image failed"
                                 } else {
-                                    sh "docker tag backend ${DOCKER_IMAGE_BE}:latest"
                                     echo "Tagged BE Docker image as ${DOCKER_IMAGE_BE}:latest"
                                 }
                             }
