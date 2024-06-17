@@ -1,6 +1,5 @@
-# Sử dụng một image node:20.11.0-alpine làm base
-FROM node:20.11.0-alpine
-
+# Sử dụng một image node:20.11.0-slim làm base
+FROM node:20.11.0-slim
 # Tạo thư mục /home/app trong container
 RUN mkdir -p /home/app
 
