@@ -10,7 +10,7 @@ pipeline {
 
         stage('Checkout GitHub') {
             steps {
-                checkout scm: git(branch: 'main', credentialsId: 'jenkins-pipeline', url: 'https://github.com/manhhung3004/ishop.git')
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkins-pipeline', url: 'https://github.com/manhhung3004/ishop.git']])
             }
         }
 
