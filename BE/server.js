@@ -66,4 +66,4 @@ sequelize
   })
   .catch(err => console.log(err));
 
-//Test10-7
+//Test10-8
