@@ -1,5 +1,3 @@
-# Dockerfile for Backend
-
 # Sử dụng một image node:20.11.0-alpine làm base
 FROM node:20.11.0-alpine
 
@@ -10,7 +8,8 @@ RUN mkdir -p /home/app
 WORKDIR /home/app
 
 # Cài đặt Python và các phụ thuộc cần thiết
-RUN apk add --no-cache world[python3] world[make] world[g++]
+RUN apk update && \
+    apk add --no-cache python3 make g++
 
 # Sao chép tất cả các tệp từ thư mục local (host) vào thư mục /home/app trong container
 COPY . /home/app
