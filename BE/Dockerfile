@@ -7,7 +7,7 @@ RUN mkdir -p /home/app
 WORKDIR /home/app
 
 # Cập nhật danh sách kho lưu trữ Alpine
-RUN sed -i 's|http://dl-cdn.alpinelinux.org/alpine/|http://dl-5.alpinelinux.org/alpine/|g' /etc/apk/repositories
+# RUN sed -i 's|http://dl-cdn.alpinelinux.org/alpine/|http://dl-5.alpinelinux.org/alpine/|g' /etc/apk/repositories
 
 # Cài đặt Python và các phụ thuộc cần thiết
 RUN apk update && \
