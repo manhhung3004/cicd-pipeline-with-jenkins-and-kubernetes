@@ -1,13 +1,11 @@
-# Sử dụng một image node:20.11.0-slim làm base
-FROM node:20.11.0-slim
+# Sử dụng một image node:20.11.0-alpine làm base
+FROM node:20.11.0-alpine
+
 # Tạo thư mục /home/app trong container
 RUN mkdir -p /home/app
 
 # Thiết lập thư mục làm việc mặc định trong container
 WORKDIR /home/app
-
-# Cập nhật danh sách kho lưu trữ Alpine
-# RUN sed -i 's|http://dl-cdn.alpinelinux.org/alpine/|http://dl-5.alpinelinux.org/alpine/|g' /etc/apk/repositories
 
 # Cài đặt Python và các phụ thuộc cần thiết
 RUN apk update && \
