@@ -38,7 +38,6 @@ pipeline {
                 }
             }
         }
-
         stage('Build and push Docker images') {
             parallel {
                 stage('Build FE') {
@@ -51,7 +50,6 @@ pipeline {
                                 // Build the FE Docker image
                                 echo "Building FE Docker image..."
                                 sh 'docker-compose build frontend'
-
                                 // Tag and push the FE image
                                 sh "docker tag ${DOCKER_IMAGE_FE}:latest mahhhuhh/ishopdockerhub:FE"
                                 sh "docker push mahhhuhh/ishopdockerhub:FE"
@@ -60,7 +58,6 @@ pipeline {
                         }
                     }
                 }
-
                 stage('Build BE') {
                     when {
                         expression { env.BUILD_BE == "true" }
@@ -72,7 +69,6 @@ pipeline {
                                 echo "Building BE Docker image..."
                                 sh 'docker-compose build backend'
                                 echo "Built BE Docker image"
-
                                 // Tag and push the BE image
                                 sh "docker tag ${DOCKER_IMAGE_BE}:latest mahhhuhh/ishopdockerhub:BE"
                                 sh "docker push mahhhuhh/ishopdockerhub:BE"
@@ -84,9 +80,6 @@ pipeline {
             }
         }
         stage('Deploy to Kubernetes') {
-            when {
-                branch 'main'
-            }
             steps {
                 script {
                     // Deploy Frontend
