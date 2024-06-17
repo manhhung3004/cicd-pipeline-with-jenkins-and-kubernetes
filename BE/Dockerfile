@@ -8,8 +8,8 @@ RUN mkdir -p /home/app
 WORKDIR /home/app
 
 # Cài đặt Python và các phụ thuộc cần thiết
-RUN apk update && \
-    apk add --no-cache python3 make g++
+# RUN apk update && \
+#     apk add --no-cache python3 make g++
 
 # Sao chép tất cả các tệp từ thư mục local (host) vào thư mục /home/app trong container
 COPY . /home/app
