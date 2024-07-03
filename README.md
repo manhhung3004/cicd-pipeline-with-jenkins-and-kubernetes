@@ -1,24 +1,33 @@
-<h1>Introducing an iShop</h1>
+<h1>CI/CD Pipeline to Deploy Application to Kubernetes Cluster Using Jenkins and GitHub</h1>
 
-<p>Welcome to our iShop! We offer a wide range of electronic accessories to enhance your devices and make your tech experience even better. Whether you're looking for chargers, cables, cases, or any other electronic accessory, we've got you covered.</p>
+<h2>Overview</h2>
+<p>This project demonstrates the deployment of a basic application using a CI/CD pipeline with Jenkins and GitHub. The primary objective is to automate the build, test, and deployment process, ensuring a streamlined workflow from code push to deployment on a Kubernetes cluster.</p>
 
-<p>If you have any questions or need assistance, our friendly customer support team is always ready to help. Happy shopping!</p>
-
-
-<h2>Using docker-compose to run the project </h2>
+<h2>Technologies Used</h2>
 <ul>
-    <li> Install docker and docker-compose and exec cml
-    <code> sudo docker-compose up</code>
-    </li>
-    <li>After done, using <code>sudo docker ps</code> to check ID of container</li>
-    <li><code>sudo docker inspect FE</code> (to get ip of container FE or others)</li>
-    <li> Check the ip address of fe container and chang to fit in file login (because axios dont get data from postgerss -> solution: Write API connect between container FE and BE) ->>>>> FIXED (using static ip in container)</li>
-    <li>Enter <code>http://localhost:5050</code> or <code>http://172.18.0.2:5050</code> to connect pgadmin with username and password in docker-compose
+    <li><strong>Jenkins</strong>: For automating the build, test, and deployment processes.</li>
+    <li><strong>Docker</strong>: For containerizing the application.</li>
+    <li><strong>Kubernetes</strong>: For orchestrating the deployment of containers.</li>
+    <li><strong>Git</strong>: For version control.</li>
+    <li><strong>GitHub</strong>: As the source code repository and for triggering Jenkins builds via webhooks.</li>
+</ul>
+
+<h2>Features</h2>
+<ol>
+    <li><strong>Automated CI/CD Pipeline</strong>:
         <ul>
-            <li> using availble in file .env of BE to connect it</li>
-            <li> Because not have account in log. y maybe create acc using web or postion import to database</li>
+            <li>Configured Jenkins to automate the build, test, and deployment process.</li>
+            <li>Set up a GitHub webhook to trigger Jenkins builds on code push.</li>
         </ul>
     </li>
-    <li>Enter <code>http://172.18.0.5:80</code> to using web</li>
-    </ul>
-<alert>If you have any question. Please connect to me forward email:<email> manhhung20033004@gmail.com</email></alert>
+    <li><strong>Continuous Integration</strong>:
+        <ul>
+            <li>Automatically build and test the application on each code push.</li>
+        </ul>
+    </li>
+    <li><strong>Continuous Deployment</strong>:
+        <ul>
+            <li>Deploy the application to a Kubernetes cluster upon successful build and test.</li>
+        </ul>
+    </li>
+</ol>
