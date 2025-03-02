@@ -86,7 +86,7 @@ pipeline {
                             namespace: 'ishop',
                             serverUrl: 'https://192.168.219.148:6443'
                         ]]) {
-                            sh "kubectl apply -f deployment-fe.yaml -n ishop"
+                            sh "kubectl apply -f ./mainfest/deployment-fe.yaml -n ishop"
                             echo "Deployed FE to Kubernetes"
                         }
                     }
@@ -101,7 +101,7 @@ pipeline {
                             namespace: 'ishop',
                             serverUrl: 'https://192.168.219.148:6443'
                         ]]) {
-                            sh "kubectl apply -f deployment-be.yaml -n ishop"
+                            sh "kubectl apply -f ./mainfest/deployment-be.yaml -n ishop"
                             echo "Deployed BE to Kubernetes"
                         }
                     }
